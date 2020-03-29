@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.route("/").get(function(req, res) {
-  res.sendFile(__dirname + "/index.html");
+  res.send("Archit and Haren use /api route");
 });
 
 app.route("/api")
