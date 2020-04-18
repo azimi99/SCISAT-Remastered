@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const querystring = require('querystring');
 const app = express();
-
-mongoose.connect("mongodb+srv://admin:uM9ZPyWo4iHX2xmK@cluster0-hc4da.mongodb.net/testDB", {
+//q4QbxT9vVV5WW6DO
+mongoose.connect("mongodb+srv://admin:q4QbxT9vVV5WW6DO@cluster0-hc4da.mongodb.net/testDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
