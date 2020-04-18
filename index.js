@@ -17,7 +17,13 @@ testSchema = {
   description: String
 };
 
+pointSchema = {
+  x: Number,
+  y: Number
+};
+
 const Test = mongoose.model("Test", testSchema);
+const Point = mongoose.model("Point", pointSchema);
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -27,18 +33,30 @@ app.route("/").get(function(req, res) {
   res.send("Archit and Haren use /api route");
 });
 
-app.route("/api")
+app.route("/api/:paramName")
   .get(function(req, res) {
     const queryObject = req.query;
     const q = queryObject.q;
-    console.log(q);
-    Test.find({name: q}, (err, foundItems) => {
-      if(err){
-        res.send(err);
-      } else {
-        res.send(foundItems);
-      }
-    });
+    const collection = req.params.paramName;
+    if (collection === "points") {
+      Point.find({}, (err, foundItems) => {
+        if(err){
+          res.send(err);
+        } else {
+          res.send(foundItems);
+        }
+      });
+    } else if(collection==="tests") {
+      console.log(q);
+      Test.find({name: q}, (err, foundItems) => {
+        if(err){
+          res.send(err);
+        } else {
+          res.send(foundItems);
+        }
+      });
+    }
+
 
 
 
@@ -50,5 +68,5 @@ if (port == null || port == ""){
 }
 
 app.listen(port, function(){
-  console.log("Server started on port"+port);
+  console.log("Server started on port "+port);
 });
