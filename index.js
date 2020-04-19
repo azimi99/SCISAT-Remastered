@@ -18,9 +18,21 @@ testSchema = {
 };
 
 pointSchema = {
+  _id: Number,
   x: Number,
   y: Number
 };
+
+function insertTest(){
+  for (let i = 0;i < 5000; i++ ){
+    const point = new Point({
+      _id: i,
+      x : Math.floor( Math.random() * 50),
+      y: Math.floor( Math.random() * 50)
+    });
+    point.save();
+  }
+}
 
 const Test = mongoose.model("Test", testSchema);
 const Point = mongoose.model("Point", pointSchema);
@@ -30,7 +42,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.route("/").get(function(req, res) {
-  res.send("Archit and Haren use /api route");
+  // insertTest();
+  res.send("Archit and Haren use /api route. Data saved.");
+
 });
 
 app.route("/api/:paramName")
@@ -43,7 +57,7 @@ app.route("/api/:paramName")
         if(err){
           res.send(err);
         } else {
-          res.send(foundItems);
+          res.send({Data:foundItems});
         }
       });
     } else if(collection==="tests") {
