@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const querystring = require('querystring');
 const app = express();
+app.use(express.static('public'));
 //q4QbxT9vVV5WW6DO
 mongoose.connect("mongodb+srv://admin:q4QbxT9vVV5WW6DO@cluster0-hc4da.mongodb.net/testDB", {
   useNewUrlParser: true,
@@ -43,7 +44,7 @@ app.use(bodyParser.urlencoded({
 
 app.route("/").get(function(req, res) {
   // insertTest();
-  res.send("Archit and Haren use /api route. Data saved.");
+  res.sendFile("index.html");
 
 });
 
@@ -70,9 +71,6 @@ app.route("/api/:paramName")
         }
       });
     }
-
-
-
 
   });
 
