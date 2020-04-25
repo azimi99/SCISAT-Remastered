@@ -42,11 +42,9 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.route("/:paramName").get(function(req, res) {
+app.route("/").get(function(req, res) {
   // insertTest();
-  const page = req.params.paramName;
-  console.log(page);
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile("index.html");
 
 });
 
@@ -80,6 +78,7 @@ let port = process.env.PORT;
 if (port == null || port == ""){
   port = 3000;
 }
+
 
 app.listen(port, function(){
   console.log("Server started on port "+port);
