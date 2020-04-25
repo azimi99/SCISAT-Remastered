@@ -42,9 +42,11 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.route("/").get(function(req, res) {
+app.route("/:paramName").get(function(req, res) {
   // insertTest();
-  res.sendFile("index.html");
+  const path = req.params.paramName;
+  console.log(path);
+  res.sendFile(__dirname+"/public/index.html");
 
 });
 
