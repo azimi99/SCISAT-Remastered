@@ -91,8 +91,8 @@ app.route("/api/:paramName")
           res.send(foundItems);
         }
       });
-    } else if(collection === "Data"){
-      Ozone.find({date:{$regex:"2004-03.*"}}, (err, foundItems)=>{
+    } else if(collection === "Data" && q){
+      Ozone.find({date:{$regex:q+".*"}}, (err, foundItems)=>{
         if (err){
           res.send(err);
         } else {
