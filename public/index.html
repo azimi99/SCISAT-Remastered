@@ -1,146 +1,184 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script src="https://kit.fontawesome.com/fe64f26374.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title></title>
-    <style>
-      .bg-space{
-        background-image: url('simple.jpg');
-      }
-    </style>
-  </head>
-  <body class="bg-space text-light">
-    <header>
-      <h1>Trials</h1>
-    </header>
-    <nav class="navbar navbar-expand-lg navbar-light text-light">
-      <a class="navbar-brand text-light mx-5" href="#">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li id="idabout" class="nav-item active mx-5">
-            <a class="nav-link text-light" href="about.html">About </a>
-          </li>
-          <li id="iddocs" class="nav-item active mx-5">
-            <a class="nav-link text-light" href="docs.html">API docs </a>
-          </li>
-        </ul>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="https://kit.fontawesome.com/fe64f26374.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title></title>
+  <style>
+    .bg-space {
+      background-image: url('simple.jpg');
+    }
+  </style>
+</head>
+
+<body class="bg-space text-light">
+  <header>
+    <h1>Trials</h1>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-light text-light">
+    <a class="navbar-brand text-light mx-5" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li id="idabout" class="nav-item active mx-5">
+          <a class="nav-link text-light" href="about.html">About </a>
+        </li>
+        <li id="iddocs" class="nav-item active mx-5">
+          <a class="nav-link text-light" href="docs.html">API docs </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main id='themain' role="main" class="ml-sm-auto px-4">
+    <div class="container-fluid" style="display: inline-block;">
+      <div id="chartContainer" style="height: 370px;display: inline-block;margin-right: 30px;" class="col-6">
+        <canvas id="scatter"></canvas>
       </div>
-    </nav>
-    <main id='themain' role="main" class="ml-sm-auto px-4">
-      <div class="container-fluid" style="display: inline-block;">
-        <div id="chartContainer" style="height: 370px;display: inline-block;margin-right: 30px;" class="col-6"></div>
-        <div class="col-4" style="display: inline-block;margin-left: 30px;">
-          <h4>the heading</h4>
-          <p>
-            The Wind Imaging Interferometer (WINDII) was launched on NASA's Upper Atmosphere Research Satellite on 12 September 1991 and operated until 2003. Its role in the mission
-            was to measure vector winds in the Earth's atmosphere from 80 to 110 km, but its measurements extended to nearly 300 km. The approach employed was to measure Doppler
-            shifts from a suite of visible region airglow lines emitted over this altitude range. These included atomic oxygen O (1S) and O (1D) lines, as well as lines in the OH Meinel
-            (8,3) and O2 atmospheric (0,0) bands. The instrument used was a Doppler Michelson Interferometer that measured the Doppler shift as a phase shift of the cosinusoidal
-            interferogram generated by single airglow lines. An extensive validation program was conducted after launch to confirm the accuracy of the measurements.
-          </p>
-        </div>
-        <form class="form-inline">
-          <div class='col-sm-3' style="padding-right:0px;padding-left:0px">
-            <div class='input-group' style="display: inline;" id='date1'>
-              <label for="startd" style="padding-right:4px;margin-bottom:0px;display: inline-block;">Start Date: </label>
-              <input type="date" id="startd" name="start date">
-            </div>
-          </div>
-          <div class='col-sm-3' style="padding-right:0px;padding-left:0px">
-            <div class='input-group' id='date1' style="display: inline;">
-              <label for="endd" style="padding-right:4px;margin-bottom:0px;display: inline-block;">End Date: </label>
-              <input type="date" id="endd" name="end date">
-            </div>
-          </div>
-          <div class="col-sm-2" style="padding-right:0px;padding-left:0px;display: flex; justify-content: flex-end">
-            <div class='input-group' id='date1' style="display: inline;">
-              <span class="input-group-addon">
-                <input type="button" class="btn btn-block btn-primary" onclick="obtaind()" value="Submit">
-              </span>
-            </div>
-          </div>
-        </form>
+      <div class="col-4" style="display: inline-block;margin-left: 30px;">
+        <h4>the heading</h4>
+        <p>
+          The Wind Imaging Interferometer (WINDII) was launched on NASA's Upper Atmosphere Research Satellite on 12 September 1991 and operated until 2003. Its role in the mission
+          was to measure vector winds in the Earth's atmosphere from 80 to 110 km, but its measurements extended to nearly 300 km. The approach employed was to measure Doppler
+          shifts from a suite of visible region airglow lines emitted over this altitude range. These included atomic oxygen O (1S) and O (1D) lines, as well as lines in the OH Meinel
+          (8,3) and O2 atmospheric (0,0) bands. The instrument used was a Doppler Michelson Interferometer that measured the Doppler shift as a phase shift of the cosinusoidal
+          interferogram generated by single airglow lines. An extensive validation program was conducted after launch to confirm the accuracy of the measurements.
+        </p>
       </div>
-    </main>
+      <form class="form-inline">
+                <div class='col-sm-3' style="padding-right:0px;padding-left:0px">
+                      <div class='input-group' style="display: inline;" id='date1'>
+                          <label for="startd" style="padding-right:4px;margin-bottom:0px;display: inline-block;">Start Date: </label>
+                          <input type="date" id="startd" name="start date">
+                        </div>
+                  </div>
+                <div class='col-sm-3' style="padding-right:0px;padding-left:0px">
+                    <div class='input-group' id='date1' style="display: inline;">
+                        <label for="endd" style="padding-right:4px;margin-bottom:0px;display: inline-block;">End Date: </label>
+                        <input type="date" id="endd" name="end date">
+                      </div>
+                  </div>
+                <div class="col-sm-2" style="padding-right:0px;padding-left:0px;display: flex; justify-content: flex-end">
+                    <div class='input-group' id='date1' style="display: inline;">
+                      <span class="input-group-addon">
+              <input type="button" class="btn btn-block btn-primary" onclick="obtaind()" value="Submit">
+                          </span>
+                      </div>
+                  </div>
+            </form>
+    </div>
+  </main>
 
-    <script type="text/javascript">
+  <script type="text/javascript">
+    function renderChart(data) {
+      var scatterChartData = {datasets: [{
+        backgroundColor: 'red',
+        label: 'Ozone Data',
+        data: data
+      }]};
 
-    $(function () {
+      var ctx = $("#scatter")[0].getContext('2d');
+      $("#scatter")[0].style.backgroundColor = 'white';
+      var myChart = new Chart(ctx, {
+        type: 'scatter',
+        data: scatterChartData,
+        options:{
+          title:{
+            display: true,
+            text: 'Gass Concentration Chart'
+          },
+          xAxes:[{
+            type: 'logarithmic',
+            position: 'bottom',
+            scaleLabel:{
+              labelString: 'Concentration (PPVM)',
+              display: true
+            },
+
+          }],
+          yAxes:[{
+            type: 'linear',
+            scaleLabel:{
+              labelString: 'Altitude (KM)',
+              display: true
+            }
+          }]
+        }
+      });
+    }
+    $(function() {
 
       $.ajax({
         type: "GET",
-        url:"/api/points",
-        success: function (response) {
-          console.log(response);
-          //var thedata = [];
-          var theydata = [];
-          var thelabels = [];
-          var thedata = response.Data.map(({_id, __v, ...rest}) => rest)
-          var passingdata = [{
-            label: 'First plot ever',
-            data: thedata
-          }];
-          var data = [];
-          var dataSeries = { type: "scatter" };
-          dataSeries.dataPoints = thedata;
-          data.push(dataSeries);
-          var options = {
-            animationEnabled: true,
-            title: {
-              text: "First ever plot"
-            },
-            data: data  // random data
-          };
-          console.log(options)
-          var chart = new CanvasJS.Chart("chartContainer", options);
-          chart.render();
+        url: "/api/Data?q=2004-03",
+        success: function(response) {
+
+          var data = response.Data;
+
+          var points = []
+          data.forEach((o) => {
+
+            let coordinates = o.alt_conc[0];
+
+            for (let i = 0; i < coordinates.length; i++) {
+              if (coordinates[i][0] !== -999) {
+                points.push({
+                  x: coordinates[i][0],
+                  y: coordinates[i][1]
+                });
+              }
+
+            }
+          });
+
+          renderChart(points);
+
+
         }
       });
 
     });
 
-    $('#idabout').on('click', 'a', function(e){
+    $('#idabout').on('click', 'a', function(e) {
       e.preventDefault();
       var url_using = $(this).attr('href');
 
       $.ajax({
         type: "GET",
         url: "about.html",
-        success: function(response){
+        success: function(response) {
           $('#themain').html(response);
         }
       });
     });
 
-    $('#iddocs').on('click', 'a', function(e){
+    $('#iddocs').on('click', 'a', function(e) {
       e.preventDefault();
       var url_using = $(this).attr('href');
 
       $.ajax({
         type: "GET",
         url: "docs.html",
-        success: function(response){
+        success: function(response) {
           $('#themain').html(response);
         }
       });
     });
-
-    </script>
-  </body>
-  <footer>
-    <p>&copy; {{ year }}</p>
-  </footer>
+  </script>
+</body>
+<footer>
+  <p>&copy; {{ year }}</p>
+   
+</footer>
 
 <!--
   footer: function (tooltipItems, data) {
