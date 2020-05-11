@@ -11,5 +11,5 @@ Along with the visualization we have also provided a public api endpoint for eve
 To run the project you need to have `npm` and `node` installed. 
 Enter the project directory and run `$ npm i` to install all the required dependancies.
 
-Once done, you can run `$ node app.js` to initiate localhost. The project will run on port 3000.
+Once done, you can run `$ node index.js` to initiate localhost. The project will run on port 3000.
 Enter port 3000 from a browser.
