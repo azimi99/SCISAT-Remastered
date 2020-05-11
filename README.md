@@ -6,6 +6,12 @@ this exact issue.
 SCISAT collects atmospheric data on varius gases. Our project concentrates on visualizing the data from the Ozone gas. 
 Along with the visualization we have also provided a public api endpoint for everyone wishing to use the data we have collected.
 
+## Definition of Roles
+
+1. Alireza Azimi -> BackEnd Development
+2. Shayan Khorassani -> FrontEnd Development
+3. Haren Venket -> Data Analyst
+
 ## Run the project locally
 
 To run the project you need to have `npm` and `node` installed. 
