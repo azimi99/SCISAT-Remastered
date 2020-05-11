@@ -19,3 +19,11 @@ Enter the project directory and run `$ npm i` to install all the required depend
 
 Once done, you can run `$ node index.js` to initiate localhost. The project will run on port 3000.
 Enter port 3000 from a browser.
+
+## Elements used in the project
+
+Our project incorporates some of the latest web development technologies.
+Our Frontend is developed using HTML5, CSS, jQuery and JavaScript.
+Our Backend is implemented in node.js using technologies like express.js and mongoose.
+Our database is implemented using MongoDB Atlas.
+Our data has been processed by the provided by the Canadian government, for the SCISAT project.
