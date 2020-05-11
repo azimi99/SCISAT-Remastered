@@ -1,4 +1,4 @@
-### SCISAT project remastered
+# SCISAT project remastered
 
 Initially designed for a CSA challenge. SCISAT posed lots of interesting challenges, both scientifical and technical. At the time of
 the competition, our team lacked the required technical knowledge to truly exhibit the power of data. The remastered project addresses
