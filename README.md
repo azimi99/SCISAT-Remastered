@@ -27,3 +27,5 @@ Our Frontend is developed using HTML5, CSS, jQuery and JavaScript.
 Our Backend is implemented in node.js using technologies like express.js and mongoose.
 Our database is implemented using MongoDB Atlas.
 Our data has been processed by data provided by the Canadian government, for the SCISAT project.
+
+## API Usage
