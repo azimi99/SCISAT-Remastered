@@ -22,11 +22,11 @@ Enter port 3000 from a browser.
 
 ## Elements used in the project
 
-Our project incorporates some of the latest web development technologies.
-Our Frontend is developed using HTML5, CSS, jQuery and JavaScript.
-Our Backend is implemented in node.js using technologies like express.js and mongoose.
-Our database is implemented using MongoDB Atlas.
-Our data has been processed by data provided by the Canadian government, for the SCISAT project.
+Our project incorporates some of the latest web development technologies.<br/>
+Our Frontend is developed using HTML5, CSS, jQuery and JavaScript.<br/>
+Our Backend is implemented in node.js using technologies like express.js and mongoose.<br/>
+Our database is implemented using MongoDB Atlas.<br/>
+Our data has been processed by data provided by the Canadian government, for the SCISAT project.<br/>
 
 ## API Usage
 There is one main endpoint:
@@ -34,5 +34,5 @@ There is one main endpoint:
 Here's a sample usage of the api:
 `Data?q=2004-03`
 
-This api call will return all data recorded in the time period "2004-03".
-You can query for various dates in the 2004-03 to 2010-12 range. Pass the query date string to the paremter `q` as shown in the example.
+This api call will return all data recorded in the time period "2004-03".<br/>
+You can query for various dates in the 2004-03 to 2010-12 range. Pass the query date string to the paremter `q` as shown in the example.<br/>
