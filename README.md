@@ -1,3 +1,12 @@
+\usepackage{hyperref}
+
+%... other code
+
+\section{Hello World}
+\label{sec:hello}
+
+\hyperref[sec:hello]{Word of text}
+
 # SCISAT project remastered
 
 Initially designed for a CSA challenge. SCISAT posed lots of interesting challenges, both scientific and technical. At the time of
