@@ -36,3 +36,8 @@ Here's a sample usage of the api:
 
 This api call will return all data recorded in the time period "2004-03".<br/>
 You can query for various dates in the 2004-03 to 2010-12 range. Pass the query date string to the paremter `q` as shown in the example.<br/>
+
+## Live Demo
+
+Here's a link to our demo:
+https://sheltered-dusk-02570.herokuapp.com/
