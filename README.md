@@ -1,8 +1,9 @@
 * [About](#user-content-scisat-project-remastered)
-* [Definition of Roles](##-Definition-of-Roles)
-* [Run the project Locally](## Run the project locally)
-* [About](#-SCISAT-project-remastered)
-
+* [Definition of Roles](#user-content-definition-of-Roles)
+* [Run the project Locally](#user-content-run-the-project-locally)
+* [Elements used](#user-content-elements-used-in-the-project)
+* [API usage](#user-content-api-usage)
+* [Demo](#user-content-live-demo)
 
 # SCISAT project remastered
 
