@@ -1,5 +1,7 @@
-[About](#-SCISAT-project-remastered)
-
+* [About](#-SCISAT-project-remastered)
+* [Definition of Roles](##-Definition-of-Roles)
+* [Run the project Locally](##-Run-the-project-locally)
+* [About](#-SCISAT-project-remastered)
 
 
 # SCISAT project remastered
