@@ -29,3 +29,10 @@ Our database is implemented using MongoDB Atlas.
 Our data has been processed by data provided by the Canadian government, for the SCISAT project.
 
 ## API Usage
+There is one main endpoint:
+/Data
+Here's a sample usage of the api:
+`Data?q=2004-03`
+
+This api call will return all data recorded in the time period "2004-03".
+You can query for various dates in the 2004-03 to 2010-12 range. Pass the query date string to the paremter `q` as shown in the example.
