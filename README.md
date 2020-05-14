@@ -30,7 +30,7 @@ Our data has been processed by data provided by the Canadian government, for the
 
 ## API Usage
 There is one main endpoint:
-/Data
+/Data<br/>
 Here's a sample usage of the api:
 `Data?q=2004-03`
 
