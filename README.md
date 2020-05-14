@@ -1,11 +1,6 @@
-\usepackage{hyperref}
+* [About](# SCISAT project remastered)
 
-%... other code
 
-\section{Hello World}
-\label{sec:hello}
-
-\hyperref[sec:hello]{Word of text}
 
 # SCISAT project remastered
 
