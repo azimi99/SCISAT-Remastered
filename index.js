@@ -96,7 +96,7 @@ app.route("/api/:paramName")
         if (err){
           res.send(err);
         } else {
-          console.log(foundItems);
+          //console.log(foundItems);
           res.send({Data:foundItems});
         }
       });
