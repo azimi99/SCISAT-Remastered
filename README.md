@@ -47,7 +47,7 @@ You can query for various dates in the 2004-03 to 2010-12 range. Pass the query 
 ## Live Demo
 
 Here's a link to our demo:
-https://sheltered-dusk-02570.herokuapp.com/
+https://scisat.herokuapp.com/
 
 
 Old project repository:
