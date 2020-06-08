@@ -1,139 +1,241 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-  <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-  <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <title></title>
-  <style>
-    .bg-space {
-      background-image: url('simple.jpg');
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SCISAT - Ozone</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+  
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+  
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+    <!-- Added by Shayan-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>  
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script> 
+
+    <style>
+      .bg-chose{
+        background-image: url('simple.jpg');
+      }
+    </style>
+
 </head>
 
-<body class="bg-space text-light">
-  <header>
-    <h1>Trials</h1>
-  </header>
-  <nav class="navbar navbar-expand-lg navbar-light text-light">
-    <a class="navbar-brand text-light mx-5" href="#">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li id="idabout" class="nav-item active mx-5">
-          <a class="nav-link text-light" href="about.html">About </a>
-        </li>
-        <li id="iddocs" class="nav-item active mx-5">
-          <a class="nav-link text-light" href="docs.html">API docs </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<body id="page-top" class="bg-chose">
 
-  <main id='themain' role="main" class="ml-sm-auto px-4">
-    <div class="container-fluid" style="display: inline-block;">
-      <div id="chartContainer" style="display: inline-block;height: 430px;margin-right: 20px;" class="col-7"></div>
-      <div class="col-4" style="display: inline-block;margin-left: 20px;">
-        <h4>SCISAT</h4>
-        <p>
-          The Atmospheric Chemistry Experiment (ACE) is a Canadian satellite mission for remote sensing of the Earth's atmosphere that was launched into a high-inclination (74°), circular low-earth (650 km from the surface) orbit on August 12, 2003
-          (Bernath et al., 2006). This orbit gives SCISAT coverage of tropical, mid-latitude, and polar regions, ranging from latitudes 85N to 85S, allowing it to study a range of atmospheric processes. The main goal of ACE is to study the
-          atmospheric chemistry and dynamics that affect stratospheric ozone depletion in the Arctic, but ACE measurements are also being used to study ozone depletion in the Antarctic, the relationship between chemistry and climate change, the
-          atmospheric effects of biomass burning, the effects of aerosols and clouds on the global energy balance, and many other areas of atmospheric science.
-        </p>
-        <form class="form-inline">
-                  <div style="padding-right:0px;padding-left:0px">
-                        <div class='input-group' style="display: inline;" id='date1'>
-                            <label for="startd" style="padding-right:4px;margin-bottom:0px;">Start Date: </label>
-                            <input type="month" id="startd" name="start date" onchange="queryConc(0, this.value)">
-                          </div>
-                    </div>
-                  <div style="padding-right:0px;padding-left:0px">
-                      <div class='input-group' id='date1' style="display: inline;">
-                          <label for="endd" style="padding-right:4px;margin-bottom:0px;">End Date: </label>
-                          <input type="date" id="endd" name="end date" onchange="queryConc(1, this.value)">
-                        </div>
-                    </div>
-                 
-              </form>
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column" style="background-color: transparent">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand topbar mt-2 mb-3 static-top" style="background-color: transparent">
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav">
+
+            <!-- Nav Item - Home -->
+            <li class="nav-item mx-3">
+              <a class="nav-link text-white h2" href="#" id="searchDropdown" role="button" data-toggle="tab">Home</a>
+            </li>
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <!-- Nav Item - Alerts -->
+            <li class="nav-item no-arrow mx-2">
+              <a class="nav-link text-white" href="about.html">About</a>
+            </li>
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <!-- Nav Item - Alerts -->
+            <li class="nav-item no-arrow mx-2">
+              <a class="nav-link text-white" href="#" id="alertsDropdown" role="button" data-toggle="tab">API</a>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid" style="background-color: transparent">
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h5 class="m-0 font-weight-bold" style="color: #006bba; margin:0px;">Ozone Plot</h5>
+                  <form class="form-inline">
+                    <div class="mx-2" style="float:right;">
+                      <div class="input-group" style="display: inline;" id="date1">
+                        <label for="startd">First Month: </label>
+                        <input type="month" id="startd" name="start date" onchange="queryConc(0, this.value)" max="2004-12" min="2004-01" value="2004-12">
+                      </div>
+                    </div>
+                    <div class="mx-2">
+                      <div class="input-group" id="date1" style="display: inline;">
+                        <label for="endd">Second Month: </label>
+                        <input type="month" id="endd" name="end date" onchange="queryConc(1, this.value)" max="2004-12" min="2004-01" value="2004-03">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area" style="min-height: 420px">
+                    <div id="chartContainer"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h5 class="m-0 font-weight-bold" style="color: #006bba; margin:0px;">Introduction</h5>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body text-dark">
+                  <p>
+                    The Atmospheric Chemistry Experiment (ACE) is a Canadian satellite mission for remote sensing of the Earth's atmosphere that was launched into a high-inclination 
+                    (74°), circular low-earth (650 km from the surface) orbit on August 12, 2003 (Bernath et al., 2006). This orbit gives SCISAT coverage of tropical, mid-latitude, 
+                    and polar regions, ranging from latitudes 85N to 85S, allowing it to study a range of atmospheric processes. The main goal of ACE is to study the atmospheric 
+                    chemistry and dynamics that affect stratospheric ozone depletion in the Arctic, but ACE measurements are also being used to study ozone depletion in the Antarctic, 
+                    the relationship between chemistry and climate change, the atmospheric effects of biomass burning, the effects of aerosols and clouds on the global energy balance, 
+                    and many other areas of atmospheric science.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col mb-2">
+
+              <!-- Project Card Example -->
+              <div class="card shadow">
+                <div class="card-header py-3">
+                  <h5 class="m-0 font-weight-bold" style="color: #006bba; margin:0px;">World map</h5>
+                </div>
+                <div class="card-body">
+                  <p style="margin:0px;">Coming soon</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
       </div>
-    </div>
-  </main>
+      <!-- End of Main Content -->
 
-  <script type="text/javascript">
-    $(function() {
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+    <script type="text/javascript">
+
+    $(function () {
+      document.getElementById("year").append(new Date().getFullYear());
 
       $("#chartContainer").CanvasJSChart({
+        zoomEnabled: true,
+        zoomType: "xy",
         backgroundColor: "transparent",
         animationEnabled: true,
-        title: {
-          text: "Ozone plot"
+        data: [],
+        axisY:{
+          title: "Altitude [km]",
+          gridThickness: 1,
+          tickLength: 20
         },
-        data: []
+        axisX:{
+          title: "Concentration"
+        }
       });
       var Pchart = $("#chartContainer").CanvasJSChart();
-      //console.log(Pchart);
-
-      document.getElementById("year").innerHTML = new Date().getFullYear();
 
       $.ajax({
         type: "GET",
-        url: "/api/Data?q=2004-03",
+        url:"/api/Data?q=2004-03",
         TheChart: Pchart,
-        success: function(response) {
+        success: function (response) {
           console.log(response, this.TheChart);
           //var thedata = [];
           AddToCanv(response, this.TheChart);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
         }
       });
 
       $.ajax({
         type: "GET",
-        url: "/api/Data?q=2004-12",
+        url:"/api/Data?q=2004-12",
         TheChart: Pchart,
-        success: function(response) {
+        success: function (response) {
           console.log(response, this.TheChart);
           //var thedata = [];
           AddToCanv(response, this.TheChart);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
         }
       });
 
     });
 
-    $('#idabout').on('click', 'a', function(e) {
-      e.preventDefault();
-      var url_using = $(this).attr('href');
-
-      $.ajax({
-        type: "GET",
-        url: "about.html",
-        success: function(response) {
-          $('#themain').html(response);
-        }
-      });
-    });
-
-    $('#iddocs').on('click', 'a', function(e) {
-      e.preventDefault();
-      var url_using = $(this).attr('href');
-
-      $.ajax({
-        type: "GET",
-        url: "docs.html",
-        success: function(response) {
-          $('#themain').html(response);
-        }
-      });
-    });
-
+    var findMax = 0;
     function AddToCanv(jsonQsec, thechart) {
       console.log(jsonQsec);
       var dataP2 = [];
@@ -142,25 +244,24 @@
         var element = jsonQsec.Data[j];
         var trnsfrm = element.alt_conc[0];
         for (var i = 0; i < trnsfrm.length; i++) {
-          if (trnsfrm[i][0] != -999) {
-            dataP2.push({
-              x: trnsfrm[i][0],
-              y: trnsfrm[i][1],
-              label: 'Latitude: ' + element.latitude +
-                ', Longitude: ' + element.longitude + ', Time: ' + element.date.slice(0, 16) +
-                ', Concentration: ' + trnsfrm[i][0]
-            });
-          }
+            if (trnsfrm[i][0] != -999) {
+              dataP2.push({y: trnsfrm[i][1], toolTipContent: 'Altitude: ' + trnsfrm[i][1] + '<br>Latitude: ' + element.latitude 
+              + '<br>Longitude: ' + element.longitude + '<br>Time: ' + element.date.slice(0,16) 
+              + '<br>Concentration: ' + trnsfrm[i][0], x: trnsfrm[i][0]
+              });
+              if (i > 0 && trnsfrm[i][0] > findMax) { findMax = trnsfrm[i][0] }
+            }
         }
       };
-      var dataS2 = {
-        type: "scatter",
-        markerSize: 3,
-        name: jsonQsec.Data[1].date.slice(0, 7)
-      };
+      var dataS2 = {type:"scatter", 
+      markerSize: 3, 
+      name: jsonQsec.Data[1].date.slice(0,7)
+      }; 
       dataS2.dataPoints = dataP2;
 
       thechart.options.data.push(dataS2);
+      thechart.options.axisX.maximum = findMax;
+      //console.log(thechart.options.axisX.maximum);
       thechart.render();
     }
 
@@ -168,67 +269,52 @@
       console.log(deterr, MonthD);
       $.ajax({
         type: "GET",
-        url: "/api/Data?q=" + MonthD,
+        url:"/api/Data?q=" + MonthD,
         IndexOfSer: deterr,
-        success: function(response) {
+        success: function (response) {
           console.log(response);
           var dataPNew = [];
-
           for (var j = 0; j < response.Data.length; j++) {
             var element = response.Data[j];
             var trnsfrm = element.alt_conc[0];
             for (var i = 0; i < trnsfrm.length; i++) {
-              if (trnsfrm[i][0] != -999) {
-                dataPNew.push({
-                  x: trnsfrm[i][0],
-                  y: trnsfrm[i][1],
-                  label: 'Latitude: ' + element.latitude +
-                    ', Longitude: ' + element.longitude + ', Time: ' + element.date.slice(0, 16) +
-                    ', Concentration: ' + trnsfrm[i][0]
-                });
-              }
-            }
+                if (trnsfrm[i][0] != -999) {
+                  dataPNew.push({x: trnsfrm[i][0], y: trnsfrm[i][1], toolTipContent: 'Altitude: ' + trnsfrm[i][1] + '<br>Latitude: ' + element.latitude
+                   + '<br>Longitude: ' + element.longitude + '<br>Time: ' + element.date.slice(0,16) 
+                   + '<br>Concentration: ' + trnsfrm[i][0]
+                  });
+                  if (i > 0 && trnsfrm[i][0] > findMax) { findMax = trnsfrm[i][0] }
+                }
+            }            
           };
-          var dataSNew = {
-            type: "scatter",
-            markerSize: 3,
-            name: element.date.slice(0, 7)
-          };
-          dataSNew.dataPoints = dataPNew;
+          //var dataSNew = {type:"scatter", markerSize: 3, name: element.date.slice(0,7)}; 
+          //dataSNew.dataPoints = dataPNew;
+          //console.log(dataPNew[dataPNew.length - 1]);
 
           var chart = $("#chartContainer").CanvasJSChart();
-          console.log(chart);
-          chart.data[this.IndexOfSer].remove();
-          chart.data.push(dataSNew);
           chart.render();
-          console.log(chart);
+          chart.options.data[this.IndexOfSer].dataPoints = dataPNew;
+          chart.options.axisX.maximum = findMax;
+          
+          chart.render();
+          //chart.options.data[this.IndexOfSer].name = element.date.slice(0,7);
+          //chart.data[this.IndexOfSer].remove();
+          //chart.data.push(dataSNew);
+          
         }
       });
     }
-  </script>
+
+    </script>
+
 </body>
-<footer>
-  <p>&copy;<span id="year"></span></p>
-   
+<!-- Footer -->
+<footer class="sticky-footer bg-transparent">
+  <div class="container">
+    <div class="copyright text-center">
+      <span id='year'>Copyright &copy; Your Website </span>
+    </div>
+  </div>
 </footer>
-
-<!--
-  footer: function (tooltipItems, data) {
-                       
-                        var theone = tooltipItems[3].datasetIndex + 1
-                        var interesting = [];
-                        interesting = data.datasets[theone].data[tooltipItems[3].index];
-
-                        return 'Ship ID: ' + interesting[0]["Ship ID"] + '\n' +
-                            'Product: ' + interesting[0]["Product"] + '\n' +
-                            'Car count by Product: ' + interesting[0]["Car count by product"] + '\n' +
-                            'Min Weight: ' + interesting[0]["Min weight"] + '\n' +
-                            'Max Weight: ' + interesting[0]["Max weight"] + '\n' +
-                            'Standard dev: ' + interesting[0]["Standard dev"] + '\n' +
-                            'Loss: ' + interesting[0]["Loss"].substr(0,6);
-
-
-
--->
-
+<!-- End of Footer -->
 </html>
